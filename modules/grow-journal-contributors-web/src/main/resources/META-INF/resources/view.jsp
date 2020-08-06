@@ -23,7 +23,6 @@
 
 	<div class="a-content sbox">
 		<ul class="list-unstyled">
-
 			<li>
 				<table class="contributors-table">
 					<c:if test="<%= modifierContributor != null %>">
@@ -53,6 +52,23 @@
 					</c:if>
 				</table>
 			</li>
+
+			<%
+				for (Contributor contributor : journalContributorsDisplayContext.getContributors()) {
+			%>
+
+			<li>
+				<span class="glyphicon glyphicon-user"></span>
+
+				<a class="" data-animation="true">
+					<%= contributor.getName() %>
+				</a>
+			</li>
+
+			<%
+				}
+			%>
+
 		</ul>
 	</div>
 </nav>
